@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore.Test", "SportsStore.Test\SportsStore.Test.csproj", "{F7D545B3-A566-487A-828E-991B49D67C5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore.Test", "SportsStore.Test\SportsStore.Test.csproj", "{F7D545B3-A566-487A-828E-991B49D67C5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore.Web", "SportsStore.Web\SportsStore.Web.csproj", "{24B8C09F-C550-44FC-98F7-FD07283005F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore.Web", "SportsStore.Web\SportsStore.Web.csproj", "{24B8C09F-C550-44FC-98F7-FD07283005F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore.Repository", "SportsStore.Repository\SportsStore.Repository.csproj", "{09F7B4DD-5F3D-4CA0-8AD6-65F9D530BA26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore.Repository", "SportsStore.Repository\SportsStore.Repository.csproj", "{09F7B4DD-5F3D-4CA0-8AD6-65F9D530BA26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore.Entities", "SportsStore.Entities\SportsStore.Entities.csproj", "{29D6F3FB-5473-401B-8BA3-F8BA5310FFE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore.Entities", "SportsStore.Entities\SportsStore.Entities.csproj", "{29D6F3FB-5473-401B-8BA3-F8BA5310FFE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore.LoggerService", "SportsStore.LoggerService\SportsStore.LoggerService.csproj", "{6CA8BE78-2B5B-4125-B94C-2433F6F4F084}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{29D6F3FB-5473-401B-8BA3-F8BA5310FFE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29D6F3FB-5473-401B-8BA3-F8BA5310FFE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29D6F3FB-5473-401B-8BA3-F8BA5310FFE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CA8BE78-2B5B-4125-B94C-2433F6F4F084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA8BE78-2B5B-4125-B94C-2433F6F4F084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA8BE78-2B5B-4125-B94C-2433F6F4F084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA8BE78-2B5B-4125-B94C-2433F6F4F084}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

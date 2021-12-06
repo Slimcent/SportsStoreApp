@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using SportsStore.Web.Middlewares;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,6 +9,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SportsStore.Web.ActionFilters;
+using System.IO;
+using NLog;
+using AutoMapper;
+using SportsStore.Entities.Mapper;
+using Microsoft.EntityFrameworkCore;
+using SportsStore.Entities.Context;
 
 namespace SportsStore.Web
 {
@@ -15,6 +23,9 @@ namespace SportsStore.Web
     {
         public Startup(IConfiguration configuration)
         {
+            LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(),
+                "/Nlog/nlog.config"));
+
             Configuration = configuration;
         }
 
@@ -23,6 +34,11 @@ namespace SportsStore.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDBConnection(Configuration);
+            services.ConfigureLoggerService();
+            services.AddAutoMapper(typeof(MappingProfile));
+            services.AddScoped<DbContext, SportsStoreDbContext>();
+            services.AddScoped<ModelStateValidation>();
             services.AddControllersWithViews();
         }
 
@@ -40,6 +56,9 @@ namespace SportsStore.Web
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+
+            app.UseStatusCodePages();
+
             app.UseStaticFiles();
 
             app.UseRouting();
