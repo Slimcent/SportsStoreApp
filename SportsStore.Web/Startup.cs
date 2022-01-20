@@ -16,6 +16,7 @@ using AutoMapper;
 using SportsStore.Entities.Mapper;
 using Microsoft.EntityFrameworkCore;
 using SportsStore.Entities.Context;
+using SportsStore.Web.Data;
 
 namespace SportsStore.Web
 {
@@ -35,9 +36,10 @@ namespace SportsStore.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDBConnection(Configuration);
+            services.AddScoped<DbContext, SportsStoreDbContext>();
+            services.AddRepositories();
             services.ConfigureLoggerService();
             services.AddAutoMapper(typeof(MappingProfile));
-            services.AddScoped<DbContext, SportsStoreDbContext>();
             services.AddScoped<ModelStateValidation>();
             services.AddControllersWithViews();
         }
@@ -71,6 +73,7 @@ namespace SportsStore.Web
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            SeedProducts.EnsurePopulated(app);
         }
     }
 }

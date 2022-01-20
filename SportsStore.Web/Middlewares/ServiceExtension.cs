@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using SportsStore.Entities.Context;
 using SportsStore.LoggerService.Interfaces;
 using SportsStore.LoggerService.LoggerManager;
+using SportsStore.Repository.Interfaces;
+using SportsStore.Repository.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,17 +19,12 @@ namespace SportsStore.Web.Middlewares
             services.AddScoped<ILoggerMessage, LoggerMessage>();
 
 
-        //public static IServiceCollection AddRepositories(this IServiceCollection services)
-        //{
-        //    services.AddTransient<IUnitOfWork, UnitOfWork<WalletDbContext>>();
-        //    services.AddTransient<IAccountService, AccountService>();
-        //    services.AddTransient<ITransactionService, TransactionService>();
-        //    services.AddTransient<IAdminService, AdminService>();
-        //    services.AddTransient<IUserService, UserService>();
-        //    services.AddTransient<IServiceFactory, ServiceFactory>();
-
-        //    return services;
-        //}
+        public static IServiceCollection AddRepositories(this IServiceCollection services)
+        {
+            services.AddTransient<IStoreRepository, StoreRepository>();
+           
+            return services;
+        }
 
 
         public static IServiceCollection AddDBConnection(this IServiceCollection services, IConfiguration configuration)
