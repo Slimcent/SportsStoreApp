@@ -1,11 +1,7 @@
-﻿using SportsStore.Entities.Context;
-using SportsStore.Entities.Models;
+﻿using SportsStore.Data.Context;
+using SportsStore.Models.Entities;
 using SportsStore.Repository.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SportsStore.Repository.Repositories
 {

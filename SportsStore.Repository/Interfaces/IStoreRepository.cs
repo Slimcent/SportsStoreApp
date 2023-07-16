@@ -1,9 +1,5 @@
-﻿using SportsStore.Entities.Models;
-using System;
-using System.Collections.Generic;
+﻿using SportsStore.Models.Entities;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SportsStore.Repository.Interfaces
 {
