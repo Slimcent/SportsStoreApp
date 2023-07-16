@@ -1,12 +1,10 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using SportsStore.Entities.Context;
-using SportsStore.Entities.Models;
-using System;
-using System.Collections.Generic;
+using SportsStore.Data.Context;
+using SportsStore.Models.Entities;
 using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace SportsStore.Web.Data
 {
