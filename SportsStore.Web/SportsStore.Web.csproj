@@ -15,9 +15,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SportsStore.Entities\SportsStore.Entities.csproj" />
+    <ProjectReference Include="..\SportsStore.Data\SportsStore.Data.csproj" />
     <ProjectReference Include="..\SportsStore.LoggerService\SportsStore.LoggerService.csproj" />
+    <ProjectReference Include="..\SportsStore.Models\SportsStore.Models.csproj" />
     <ProjectReference Include="..\SportsStore.Repository\SportsStore.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>

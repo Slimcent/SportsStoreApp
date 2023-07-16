@@ -5,18 +5,12 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using SportsStore.Web.ActionFilters;
 using System.IO;
 using NLog;
-using AutoMapper;
-using SportsStore.Entities.Mapper;
 using Microsoft.EntityFrameworkCore;
-using SportsStore.Entities.Context;
 using SportsStore.Web.Data;
+using SportsStore.Data.Context;
 
 namespace SportsStore.Web
 {
@@ -39,7 +33,7 @@ namespace SportsStore.Web
             services.AddScoped<DbContext, SportsStoreDbContext>();
             services.AddRepositories();
             services.ConfigureLoggerService();
-            services.AddAutoMapper(typeof(MappingProfile));
+            //services.AddAutoMapper(typeof(MappingProfile));
             services.AddScoped<ModelStateValidation>();
             services.AddControllersWithViews();
         }
@@ -66,13 +60,18 @@ namespace SportsStore.Web
             app.UseRouting();
 
             app.UseAuthorization();
-
+                        
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("pagination",
+                       "Products/Page{productPage}",
+                        new { Controller = "Home", action = "Index" });
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
             SeedProducts.EnsurePopulated(app);
         }
     }

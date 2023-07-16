@@ -1,8 +1,22 @@
-﻿@{
+﻿@using SportsStore.Models.ViewModels
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
+@model ProductsListViewModel
+
 <div class="text-center">
     <h4>Welcome to Slimcent Sports Store Application</h4>
-    
+
+    @foreach (var p in Model?.Products ?? Enumerable.Empty<Product>())
+    {
+        <div>
+            <h3>@p.Name</h3>
+            @p.Description
+            <h4>@p.Price.ToString("c")</h4>
+        </div>
+    }
+
+    <div page-model="@Model?.PagingInfo" page-action="Index"></div>
 </div>
