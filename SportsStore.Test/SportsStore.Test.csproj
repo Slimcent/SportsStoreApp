@@ -20,4 +20,11 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SportsStore.Models\SportsStore.Models.csproj" />
+    <ProjectReference Include="..\SportsStore.Repository\SportsStore.Repository.csproj" />
+    <ProjectReference Include="..\SportsStore.Services\SportsStore.Services.csproj" />
+    <ProjectReference Include="..\SportsStore.Web\SportsStore.Web.csproj" />
+  </ItemGroup>
+
 </Project>
