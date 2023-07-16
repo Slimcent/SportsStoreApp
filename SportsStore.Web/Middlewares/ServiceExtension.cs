@@ -1,15 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SportsStore.Entities.Context;
+using SportsStore.Data.Context;
 using SportsStore.LoggerService.Interfaces;
 using SportsStore.LoggerService.LoggerManager;
 using SportsStore.Repository.Interfaces;
 using SportsStore.Repository.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SportsStore.Web.Middlewares
 {

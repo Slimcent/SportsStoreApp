@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
-using SportsStore.Entities.Models;
 using SportsStore.LoggerService.Interfaces;
+using SportsStore.Models.ViewModels;
 using System.Net;
 
 
