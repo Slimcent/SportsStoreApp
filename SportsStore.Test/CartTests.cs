@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using SportsStore.Models;
 using SportsStore.Models.Entities;
+using SportsStore.Web.Services.Implementation;
 using Xunit;
 
 namespace SportsStore.Test

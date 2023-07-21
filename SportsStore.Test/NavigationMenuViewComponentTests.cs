@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 using Moq;
 using SportsStore.Web.Components;
-using SportsStore.Models;
 using Xunit;
 using SportsStore.Models.Entities;
 using SportsStore.Repository.Interfaces;
