@@ -11,6 +11,8 @@ using NLog;
 using Microsoft.EntityFrameworkCore;
 using SportsStore.Web.Data;
 using SportsStore.Data.Context;
+using Microsoft.AspNetCore.Http;
+using SportsStore.Web.Services.Implementation;
 
 namespace SportsStore.Web
 {
@@ -39,6 +41,8 @@ namespace SportsStore.Web
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
             services.AddSession();
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
