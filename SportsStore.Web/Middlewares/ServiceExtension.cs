@@ -18,7 +18,8 @@ namespace SportsStore.Web.Middlewares
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             services.AddTransient<IStoreRepository, StoreRepository>();
-           
+            services.AddScoped<IOrderRepository, OrderRepository>();
+
             return services;
         }
 
