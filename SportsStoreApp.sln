@@ -11,11 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore.Repository", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore.LoggerService", "SportsStore.LoggerService\SportsStore.LoggerService.csproj", "{6CA8BE78-2B5B-4125-B94C-2433F6F4F084}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore.Services", "SportsStore.Services\SportsStore.Services.csproj", "{DCE0B010-64E8-4F53-BBC9-9347204C4286}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore.Services", "SportsStore.Services\SportsStore.Services.csproj", "{DCE0B010-64E8-4F53-BBC9-9347204C4286}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore.Data", "SportsStore.Data\SportsStore.Data.csproj", "{FC5E078F-987B-4AE6-A108-FE56A214C788}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore.Data", "SportsStore.Data\SportsStore.Data.csproj", "{FC5E078F-987B-4AE6-A108-FE56A214C788}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore.Models", "SportsStore.Models\SportsStore.Models.csproj", "{EDFEE415-9EE7-4566-AE57-89D4E3E46928}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore.Models", "SportsStore.Models\SportsStore.Models.csproj", "{EDFEE415-9EE7-4566-AE57-89D4E3E46928}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -36,6 +36,7 @@ namespace SportsStore.Web
             //services.AddAutoMapper(typeof(MappingProfile));
             services.AddScoped<ModelStateValidation>();
             services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -85,6 +86,7 @@ namespace SportsStore.Web
                 //    pattern: "{controller=Home}/{action=Index}/{id?}");
 
                 endpoints.MapDefaultControllerRoute();
+                endpoints.MapRazorPages();
             });
 
             SeedProducts.EnsurePopulated(app);
