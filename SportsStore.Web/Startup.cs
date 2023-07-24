@@ -32,7 +32,9 @@ namespace SportsStore.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDBConnection(Configuration);
+            services.AddIdentityDBConnection(Configuration);
             services.AddScoped<DbContext, SportsStoreDbContext>();
+            services.AddScoped<DbContext, AppIdentityDbContext>();
             services.AddRepositories();
             services.ConfigureLoggerService();
             //services.AddAutoMapper(typeof(MappingProfile));
@@ -69,6 +71,7 @@ namespace SportsStore.Web
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
                         
             app.UseEndpoints(endpoints =>
@@ -94,6 +97,7 @@ namespace SportsStore.Web
             });
 
             SeedProducts.EnsurePopulated(app);
+            IdentitySeedData.EnsurePopulated(app);
         }
     }
 }

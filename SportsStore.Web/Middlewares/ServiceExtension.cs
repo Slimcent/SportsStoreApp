@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SportsStore.Data.Context;
@@ -44,6 +45,19 @@ namespace SportsStore.Web.Middlewares
             //})
             //    .AddEntityFrameworkStores<WalletDbContext>()
             //    .AddDefaultTokenProviders();
+
+            return services;
+        }
+
+        public static IServiceCollection AddIdentityDBConnection(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDbContext<AppIdentityDbContext>(options =>
+                options.UseSqlServer(configuration["ConnectionStrings:IdentityConnection"],
+                    b => b.MigrationsAssembly("SportsStore.Web"))
+                );
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<AppIdentityDbContext>();
 
             return services;
         }
